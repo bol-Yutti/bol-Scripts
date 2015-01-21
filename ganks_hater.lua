@@ -1,6 +1,6 @@
 
 
-local version = "0.2"
+local version = "0.3"
 
 local AUTOUPDATE = true
 local UPDATE_HOST = "raw.github.com"
