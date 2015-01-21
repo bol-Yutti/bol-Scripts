@@ -1,16 +1,16 @@
 
 
-local version = "0.3"
+local version = "0.2"
 
 local AUTOUPDATE = true
 local UPDATE_HOST = "raw.github.com"
-local UPDATE_PATH = "/ganks_hater/ganks_hater.lua".."?rand="..math.random(1,10000)
+local UPDATE_PATH = "/bol-Yutti/bol-Scripts/master/ganks_hater.lua".."?rand="..math.random(1,10000)
 local UPDATE_FILE_PATH = SCRIPT_PATH..GetCurrentEnv().FILE_NAME
 local UPDATE_URL = "https://"..UPDATE_HOST..UPDATE_PATH
 
 function AutoupdaterMsg(msg) print("<font color=\"#6699ff\"><b>Ganks Hater:</b></font> <font color=\"#FFFFFF\">"..msg..".</font>") end
 if AUTOUPDATE then
-local ServerData = GetWebResult(UPDATE_HOST, "/ganks_hater/ganks_hater.version")
+local ServerData = GetWebResult(UPDATE_HOST, "/bol-Yutti/bol-Scripts/version/ganks_hate.version")
 if ServerData then
 ServerVersion = type(tonumber(ServerData)) == "number" and tonumber(ServerData) or nil
 if ServerVersion then
@@ -46,31 +46,31 @@ function OnLoad()
 	secTime = currentGame.tick/1000
 	
 	
-	Ganks = scriptConfig("؀GANK׺˖", "Ganks Hater")
+	Ganks = scriptConfig("?GANK??", "Ganks Hater")
 	
-	Ganks:addSubMenu("[ʹӴ]", "Sounds")
-		Ganks.Sounds:addParam("welcome","   ޸ԎϷ۶ӭԯ", SCRIPT_PARAM_ONOFF, false)
-		Ganks.Sounds:addParam("voiceonoff","   ʹӴ͡ʾߪژ", SCRIPT_PARAM_ONOFF, false)
-		Ganks.Sounds:addParam("danger","   ղҰ޸ɫϒ׽˓Ұ͡ʾ", SCRIPT_PARAM_ONOFF, false)
-		Ganks.Sounds:addParam("shutdown","   ֹͣ", SCRIPT_PARAM_ONOFF, false)
+	Ganks:addSubMenu("[??]", "Sounds")
+		Ganks.Sounds:addParam("welcome","   ??????", SCRIPT_PARAM_ONOFF, false)
+		Ganks.Sounds:addParam("voiceonoff","   ??????", SCRIPT_PARAM_ONOFF, false)
+		Ganks.Sounds:addParam("danger","   ??????????", SCRIPT_PARAM_ONOFF, false)
+		Ganks.Sounds:addParam("shutdown","   ??", SCRIPT_PARAM_ONOFF, false)
 	
-	Ganks:addParam("announcer","ҥӴ", SCRIPT_PARAM_ONOFF, true)
-	Ganks:addParam("voice","ʹӴ", SCRIPT_PARAM_ONOFF, false)
-	Ganks:addSubMenu("[ޯ٦ҭ]", "WarningList")
+	Ganks:addParam("announcer","??", SCRIPT_PARAM_ONOFF, true)
+	Ganks:addParam("voice","??", SCRIPT_PARAM_ONOFF, false)
+	Ganks:addSubMenu("[????]", "WarningList")
 	for _, enemy in ipairs(GetEnemyHeroes()) do
 
-		Ganks.WarningList:addParam(enemy.hash, "   ޯ٦͡ʾ: "..enemy.charName.."", SCRIPT_PARAM_ONOFF, false)
+		Ganks.WarningList:addParam(enemy.hash, "   ????: "..enemy.charName.."", SCRIPT_PARAM_ONOFF, false)
 
 	end
-	Ganks:addParam("Drawrange","׶ΧДʾ", SCRIPT_PARAM_ONOFF, true)
-	Ganks:addParam("DrawWaypoints","ۭԶ֐׽ղҰ·П ", SCRIPT_PARAM_ONOFF, true)
-	Ganks:addParam("DangerText","ΣЕτѾ͡ʾ", SCRIPT_PARAM_ONOFF, true)
-	Ganks:addParam("Range", "׶ΧŚޯ٦", SCRIPT_PARAM_SLICE, 3000, 0, 3500, 0)
-	Ganks:addParam("autoturn","ʹԃؔ֯ژҕ", SCRIPT_PARAM_ONOFF, true)
-	Ganks:addParam("AutoTurnoffat", "Оʱژҕ", SCRIPT_PARAM_SLICE, 20, 0, 120, 0)
-	Ganks:addParam("debugmode","ַ˔", SCRIPT_PARAM_ONOFF, false)
-	Ganks:addParam("info1", "؀GANK׺˖  "..version.."", SCRIPT_PARAM_INFO, "")
-	Ganks:addParam("info2", "ŻĊںۯ", SCRIPT_PARAM_INFO, "")
+	Ganks:addParam("Drawrange","?ΧД?", SCRIPT_PARAM_ONOFF, true)
+	Ganks:addParam("DrawWaypoints","??????·П ", SCRIPT_PARAM_ONOFF, true)
+	Ganks:addParam("DangerText","ΣЕτ???", SCRIPT_PARAM_ONOFF, true)
+	Ganks:addParam("Range", "?Χ???", SCRIPT_PARAM_SLICE, 3000, 0, 3500, 0)
+	Ganks:addParam("autoturn","??????", SCRIPT_PARAM_ONOFF, true)
+	Ganks:addParam("AutoTurnoffat", "О???", SCRIPT_PARAM_SLICE, 20, 0, 120, 0)
+	Ganks:addParam("debugmode","??", SCRIPT_PARAM_ONOFF, false)
+	Ganks:addParam("info1", "?GANK??  "..version.."", SCRIPT_PARAM_INFO, "")
+	Ganks:addParam("info2", "????", SCRIPT_PARAM_INFO, "")
 	
 
 	
